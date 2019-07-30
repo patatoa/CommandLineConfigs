@@ -19,6 +19,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'fatih/vim-go'
 Plugin 'pangloss/vim-javascript'
+Plugin 'kblin/vim-fountain'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'posva/vim-vue'
 call vundle#end()            " required
 filetype plugin indent on    " required
 filetype plugin on
