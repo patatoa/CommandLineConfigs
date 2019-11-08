@@ -19,6 +19,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'fatih/vim-go'
 Plugin 'pangloss/vim-javascript'
+Plugin 'kblin/vim-fountain'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'posva/vim-vue'
 call vundle#end()            " required
 filetype plugin indent on    " required
 filetype plugin on
@@ -63,3 +66,11 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 "F8 for Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+"the below is for vim background color support in st.
+if &term =~ '256color'
+		    " disable Background Color Erase (BCE) so that color schemes
+			" render properly when inside 256-color tmux and GNU screen.
+			" see also http://sunaku.github.io/vim-256color-bce.html
+   set t_ut=
+ endif
