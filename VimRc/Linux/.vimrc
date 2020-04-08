@@ -139,3 +139,9 @@ call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
 						\ 'completor': function('asyncomplete#sources#omni#completor')
 						\  }))
 let g:OmniSharp_want_snippet=1
+
+"Groff related things I like
+"  set wrap,
+"  compile to pdf on save
+autocmd BufNewFile,BufRead *.me set wrap
+autocmd BufWritePost *.me ! groff -ms -Tpdf %  > %:r.pdf
