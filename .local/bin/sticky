@@ -1,0 +1,2 @@
+#!/bin/sh
+xkbset sticky twokey; xkbset exp 1 =sticky =twokey

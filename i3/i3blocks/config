@@ -1,0 +1,29 @@
+command=$SCRIPT_DIR/$BLOCK_NAME
+markup=pango
+
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+color=#A4C2F4
+
+[backlight]
+command=cat $SCRIPT_DIR/backlight-value
+signal=2
+interval=once
+
+[wifi]
+interval=50
+color=#A4C2F4
+
+[volume]
+interval=once
+signal=1
+color=#A4C2F4
+command=cat $SCRIPT_DIR/vol
+
+[power]
+interval=50
+
+[date]
+command=date +"%F %r"
+interval=5
