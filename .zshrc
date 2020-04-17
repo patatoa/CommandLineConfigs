@@ -105,7 +105,7 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+autoload -Uz compinit && compinit
 # Set up things particular to an envrironment, including private info
 ENVFILE=~/.config/.privateData
 test -f $ENVFILE 2> /dev/null && source $ENVFILE
