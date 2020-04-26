@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ssid=$(iw dev wlp2s0 link | awk '$1=="SSID:" {print $2}')
+signal=$(iw dev wlp2s0 link|awk '$1=="signal:" {print $2 + 100 "%"}')
+
+echo " $ssid ($signal)"

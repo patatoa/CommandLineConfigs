@@ -1,15 +1,16 @@
 #!/bin/sh
 
- pulseaudio-ctl $1  && 
+ pulseaudio-ctl $1  > /dev/null
 	 pulseaudio-ctl full-status |
 	 awk '{
 	  if ($2 =="yes")
-		  print "🔇<span color=\"red\"> mute </span>"
-	  else
+		  print "🔇mute"
+	  else {
 		  if($1 < 35) emoji="🔈"
 		  else if($1 < 65) emoji="🔉"
 		  else emoji="🔊"
 
-		  print "<span color=\"green\">" emoji $1 "%</span>"
-	  }' > ~/.config/i3blocks/vol && 
-	 pkill -RTMIN+1 i3blocks
+		  print emoji $1 "%"
+	  }
+	  }' > ~/.local/.currentVolume
+	 pkill -RTMIN+1 dwmblocks

@@ -1,0 +1,14 @@
+#!/bin/sh
+batteryLevel=$(cat /sys/class/power_supply/BAT0/capacity)
+bstatus=$(cat /sys/class/power_supply/BAT0/status)
+#bstatus="Discharging"
+
+if [[ "$bstatus" == *Discharging* ]]
+then
+	statusIcon="🔋"
+else
+	statusIcon="🔌"
+fi
+
+echo "$statusIcon $batteryLevel%"
+#pkill -RTMIN+4 dwmblocks
