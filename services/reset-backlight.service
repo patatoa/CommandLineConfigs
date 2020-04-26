@@ -1,0 +1,9 @@
+[Unit]
+Description=Dim screen on resume.
+After=suspend.target
+
+[Service]
+ExecStart=/usr/bin/xbacklight -set 4
+
+[Install]
+WantedBy=suspend.target

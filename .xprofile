@@ -1,0 +1,26 @@
+#
+# ~/.xprofile
+#
+#
+
+# if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+#     eval "$(dbus-launch --sh-syntax --exit-with-session)"
+# fi
+
+# Environment variables
+#
+
+[[ -f ~/.extend.xprofile ]] && . ~/.extend.xprofile
+
+xkbset sticky twokey
+xinput set-prop "SynPS/2 Synaptics TouchPad" 286 0
+xinput set-prop "SynPS/2 Synaptics TouchPad" 278 1
+xinput set-prop "SynPS/2 Synaptics TouchPad" 291 0 1 0
+xbindkeys
+
+export TERMINAL=st
+export BROWSER=qutebrowser
+
+picom -b
+
+xwallpaper --zoom ~/Pictres/wallpaper.png
