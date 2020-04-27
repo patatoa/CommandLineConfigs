@@ -5,21 +5,21 @@ rounded=$(echo "($CURRENT+0.5)/1" | bc)
 label="💡"
 if [ -z $1 ];
 then
-	cat ~/.config/i3blocks/backlight-value
+	cat ~/.cache/backlight-value
 	exit 1
 fi
-if [[ $rounded < 35 ]]
+if [ "$rounded" -lt "35" ]
 then
 	xbacklight -set 50
 	label="$label med"
-elif [[ $rounded < 65 ]]
+elif [ "$rounded" -lt "65" ]
 then
 	xbacklight -set 80
 	label="$label hi"
 else
-	xbacklight -set 10
+	xbacklight -set 4
 	label="$label low"
 fi
 
-echo $label > ~/.config/i3blocks/backlight-value
-pkill -RTMIN+2 i3blocks
+echo $label > ~/.cache/backlight-value
+pkill -RTMIN+2 dwmblocks
