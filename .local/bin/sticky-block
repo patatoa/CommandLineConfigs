@@ -1,0 +1,12 @@
+#!/bin/sh
+case $BLOCK_BUTTON in
+	1) xkbset sticky twokey; xkbset exp 1 =sticky =twokey ;;
+	2) xkbset sticky twokey; xkbset exp 1 =sticky =twokey ;;
+esac
+
+if [[ $(xkbset q |grep "Sticky-Keys = On") ]]
+then
+	echo "+Sticky"
+else
+	echo "-Sticky"
+fi
